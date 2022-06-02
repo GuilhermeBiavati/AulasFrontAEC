@@ -2,23 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Macondo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <title>G1</title>
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: "Roboto", sans-serif;
+            background-color: #f9f9f9;
         }
 
         .section1 {
@@ -78,7 +81,6 @@
         .red2:hover {
             color: #fb0234;
             /* border-top: 2px solid #fb0234; */
-
         }
 
         .blue {
@@ -129,7 +131,7 @@
         }
 
         .navbar-g1 {
-            background-color: #C4170C !important;
+            background-color: #c4170c !important;
         }
 
         .section2 {
@@ -168,24 +170,50 @@
             margin-bottom: 20px;
         }
 
-        .descricao{
+        .descricao {
             font-size: 16px;
             color: #333333;
             font-weight: 600;
             margin-bottom: 150px;
         }
 
-        .card-direito-section3{
-            height: 300px;
-            background-color: rgba(0, 0, 0, 0.2);
-            background-image: url("images/noticia1.webp");
-            background-position: center center;
-            background-size: cover;
-            padding: 10px 20px;
+        .card-direito-section3 {
+            height: 295px;
+            position: relative;
             border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .child {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            /* fallback color */
+            background-image: url("images/noticia1.webp");
+            background-position: center;
+            background-size: cover;
+            transition: all .5s;
+            background-repeat: no-repeat;
+        }
+
+        .child:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        .card-direito-section3:hover .child,
+        .card-direito-section3:focus .child {
+            transform: scale(1.1);
+            transition: all .5s;
         }
 
         /* .card-direito-section3::before{
@@ -196,11 +224,14 @@
             
         } */
 
-        .categoria2{
+        .categoria2 {
             color: white;
             font-size: 16px;
             font-weight: 600;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
 
         .titulo2 {
@@ -208,43 +239,148 @@
             font-size: 32px;
             font-weight: 900;
             line-height: 32px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
         }
 
+
+
+        .card-section-4 {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #c8c8c8;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            grid-column-gap: 16px;
+        }
+
+        .container-imagem-card-4 {
+            max-width: 390px;
+            flex: 1 1 100%;
+        }
+
+        .imagem-card-4 {
+            max-width: 100%;
+        }
+
+        .container-conteudo {
+            padding: 8px 0;
+        }
+
+        .categoria-card-4 {
+            color: #333333;
+            font-size: 16px;
+            line-height: 16px;
+            margin-bottom: 8px;
+        }
+
+        .titulo-card-4 {
+            color: #c4170c;
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+
+        }
+
+        .descricao-card-4>ul {
+            padding-left: 16px;
+        }
+
+        .descricao-card-4>ul>li {
+            color: #999999;
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 100;
+            margin-bottom: 10px;
+        }
+
+        .descricao-card-4>ul>li>span {
+            color: #c4170c;
+        }
+
+        .data-card-4 {
+            color: #555555;
+            font-size: 12px;
+        }
+
+        .resumo-card-4 {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 8px;
+        }
+
+        .menu-lateral {
+            border: 1px solid rgb(238, 238, 238);
+            border-radius: 5px;
+            background-color: white;
+
+        }
+
+        .cabecalho-menu-lateral {
+            padding: 24px;
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid rgb(238, 238, 238);
+        }
+
+        .item-menu-lateral {
+            padding: 24px;
+            display: flex;
+            border-bottom: 1px solid rgb(238, 238, 238);
+        }
+
+
+        .texto-menu-lateral {
+            color: #c4170c;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .imagem-menu-lateral {}
+
+
+
+        .rodape-menu-lateral {
+            padding: 16px 24px;
+            color: #c4170c;
+            font-size: 14px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
-
     <section class="section1">
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <div style="display: flex; align-items: center;">
+                    <div style="display: flex; align-items: center">
                         <div class="button-section-1 light-blue">
                             <a href="https://www.globo.com" target="_blank" class="light-blue">globo.com</a>
                         </div>
                         <div class="button-section-1 red">
-                            <a href="https://g1.globo.com" target="_blank" class=" red">g1</a>
-
+                            <a href="https://g1.globo.com" target="_blank" class="red">g1</a>
                         </div>
                         <div class="button-section-1 green">
-                            <a href="https://ge.globo.com" target="_blank" class=" green">ge</a>
+                            <a href="https://ge.globo.com" target="_blank" class="green">ge</a>
                         </div>
                         <div class="button-section-1 orange">
-                            <a href="https://gshow.globo.com" target="_blank" class=" orange">gshow</a>
-
+                            <a href="https://gshow.globo.com" target="_blank" class="orange">gshow</a>
                         </div>
                         <div class="button-section-1 red2">
-                            <a href="https://globoplay.globo.com" target="_blank" class=" red2">globoplay</a>
-
+                            <a href="https://globoplay.globo.com" target="_blank" class="red2">globoplay</a>
                         </div>
                         <div class="button-section-1 blue">
-                            <a href="https://globo.com" target="_blank" class=" blue">o globo</a>
+                            <a href="https://globo.com" target="_blank" class="blue">o globo</a>
                         </div>
 
-                        <span style="flex: 1 1 auto;"></span>
+                        <span style="flex: 1 1 auto"></span>
 
                         <a href="" class="button-assine">Assine já</a>
                         <a href="" class="button-entrar">Entrar ></a>
@@ -253,7 +389,6 @@
             </div>
         </div>
     </section>
-
 
     <nav class="navbar navbar-expand-lg bg-light navbar-g1">
         <div class="container-fluid">
@@ -280,9 +415,11 @@
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -290,8 +427,10 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
                 </form>
             </div>
         </div>
@@ -301,7 +440,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <img src="images/anuncio.jpg" class="img-anuncio" alt="">
+                    <img src="images/anuncio.jpg" class="img-anuncio" alt="" />
                 </div>
             </div>
         </div>
@@ -311,25 +450,33 @@
             <div class="row">
                 <div class="col-6">
                     <div class="card-esquerdo-section3">
-                        <div class="categoria">
-                            Corrida presidencial
-                        </div>
+                        <div class="categoria">Corrida presidencial</div>
                         <div>
                             <div class="titulo">
-                                Datafolha: Lula tem 48% no primeiro turno, contra 27% de Bolsonaro
+                                Datafolha: Lula tem 48% no primeiro turno, contra 27% de
+                                Bolsonaro
                             </div>
                             <div class="descricao">
-                                Ciro Gomes aparece com 7%, André Janones tem 2% e Simone Tebet, 2%. Pesquisa é a primeira do
-                                Datafolha após saídas de Doria e Moro.
+                                Ciro Gomes aparece com 7%, André Janones tem 2% e Simone
+                                Tebet, 2%. Pesquisa é a primeira do Datafolha após saídas de
+                                Doria e Moro.
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="card-direito-section3">
-                        <div class="categoria2">
-                            'Um milagre'
+                        <div class="child">
                         </div>
+                        <div class="categoria2">'Um milagre'</div>
+                        <div class="titulo2">
+                            Ex-BBB Rodrigo Mussi dá 1ª entrevista após acidente
+                        </div>
+                    </div>
+                    <div class="card-direito-section3">
+                        <div class="child">
+                        </div>
+                        <div class="categoria2">'Um milagre'</div>
                         <div class="titulo2">
                             Ex-BBB Rodrigo Mussi dá 1ª entrevista após acidente
                         </div>
@@ -339,9 +486,246 @@
         </div>
     </section>
 
+    <section class="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="images/anuncio.jpg" class="img-anuncio" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao asd fs sdasdf asdf d fsd fsdf asdfsd fs
+                                sescorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <ul>
+                                    <li><span>Veja quem são as vítimas identificadas até agora</span></li>
+                                    <li><span>Saiba como ajudar as vítimas das chuvas em Pernambuco</span></li>
+                                </ul>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao escorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <div class="resumo-card-4">
+                                    Atriz terá que pagar US$ 10 milhões de indenização e ator, US$ 2 milhões.
+                                </div>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao asd fs sdasdf asdf d fsd fsdf asdfsd fs
+                                sescorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <ul>
+                                    <li><span>Veja quem são as vítimas identificadas até agora</span></li>
+                                    <li><span>Saiba como ajudar as vítimas das chuvas em Pernambuco</span></li>
+                                </ul>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao escorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <div class="resumo-card-4">
+                                    Atriz terá que pagar US$ 10 milhões de indenização e ator, US$ 2 milhões.
+                                </div>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao asd fs sdasdf asdf d fsd fsdf asdfsd fs
+                                sescorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <ul>
+                                    <li><span>Veja quem são as vítimas identificadas até agora</span></li>
+                                    <li><span>Saiba como ajudar as vítimas das chuvas em Pernambuco</span></li>
+                                </ul>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao escorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <div class="resumo-card-4">
+                                    Atriz terá que pagar US$ 10 milhões de indenização e ator, US$ 2 milhões.
+                                </div>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao asd fs sdasdf asdf d fsd fsdf asdfsd fs
+                                sescorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <ul>
+                                    <li><span>Veja quem são as vítimas identificadas até agora</span></li>
+                                    <li><span>Saiba como ajudar as vítimas das chuvas em Pernambuco</span></li>
+                                </ul>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section-4">
+                        <div class="container-imagem-card-4">
+                            <img src="images/bombeiro.jpeg" class="imagem-card-4" alt="">
+                        </div>
+                        <div class="container-conteudo">
+                            <div class="categoria-card-4">
+                                Violêncio no Rj
+                            </div>
+                            <div class="titulo-card-4">
+                                Bombeiro que fugia de deslizamento morre ao escorregar em lama
+                            </div>
+                            <div class="descricao-card-4">
+                                <div class="resumo-card-4">
+                                    Atriz terá que pagar US$ 10 milhões de indenização e ator, US$ 2 milhões.
+                                </div>
+                                <div class="data-card-4">Há 1 hora - Em Pernambuco</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="menu-lateral">
+                        <div class="cabecalho-menu-lateral">
+                            Viu isso aqui?
+                        </div>
+                        <div class="item-menu-lateral">
+                            <div class="texto-menu-lateral">
+                                Amber Heard e Johnny Depp são condenados: atriz deve pagar US$ 10 milhões; ator, US$ 2
+                                milhões
+                            </div>
+                            <div class="imagem-menu-lateral">
+                                <img src="images/noticia-lateral.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="item-menu-lateral">
+                            <div class="texto-menu-lateral">
+                                Amber Heard e Johnny Depp são condenados: atriz deve pagar US$ 10 milhões; ator, US$ 2
+                                milhões
+                            </div>
+                            <div class="imagem-menu-lateral">
+                                <img src="images/noticia-lateral.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="item-menu-lateral">
+                            <div class="texto-menu-lateral">
+                                Amber Heard e Johnny Depp são condenados: atriz deve pagar US$ 10 milhões; ator, US$ 2
+                                milhões
+                            </div>
+                            <div class="imagem-menu-lateral">
+                                <img src="images/noticia-lateral.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="item-menu-lateral">
+                            <div class="texto-menu-lateral">
+                                Amber Heard e Johnny Depp são condenados: atriz deve pagar US$ 10 milhões; ator, US$ 2
+                                milhões
+                            </div>
+                            <div class="imagem-menu-lateral">
+                                <img src="images/noticia-lateral.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="item-menu-lateral">
+                            <div class="texto-menu-lateral">
+                                Amber Heard e Johnny Depp são condenados: atriz deve pagar US$ 10 milhões; ator, US$ 2
+                                milhões
+                            </div>
+                            <div class="imagem-menu-lateral">
+                                <img src="images/noticia-lateral.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="rodape-menu-lateral">
+                            Mais conteúdos recomendados <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+    <footer>
+        <div>
 
+        </div>
+
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
